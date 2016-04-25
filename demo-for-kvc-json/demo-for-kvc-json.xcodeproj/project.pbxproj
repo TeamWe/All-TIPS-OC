@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93043BDA1CCE5533008AD138 /* JGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93043BD91CCE5533008AD138 /* JGModel.m */; };
 		A7396FDF1CCC599C0020047B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7396FDE1CCC599C0020047B /* main.m */; };
 		A7396FE21CCC599C0020047B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7396FE11CCC599C0020047B /* AppDelegate.m */; };
 		A7396FE51CCC599C0020047B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7396FE41CCC599C0020047B /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93043BD81CCE5533008AD138 /* JGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGModel.h; sourceTree = "<group>"; };
+		93043BD91CCE5533008AD138 /* JGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGModel.m; sourceTree = "<group>"; };
 		A7396FDA1CCC599C0020047B /* demo-for-kvc-json.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-for-kvc-json.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7396FDE1CCC599C0020047B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7396FE01CCC599C0020047B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				A7396FE11CCC599C0020047B /* AppDelegate.m */,
 				A7396FE31CCC599C0020047B /* ViewController.h */,
 				A7396FE41CCC599C0020047B /* ViewController.m */,
+				93043BD81CCE5533008AD138 /* JGModel.h */,
+				93043BD91CCE5533008AD138 /* JGModel.m */,
 				A7396FE61CCC599C0020047B /* Main.storyboard */,
 				A7396FE91CCC599C0020047B /* Assets.xcassets */,
 				A7396FEB1CCC599C0020047B /* LaunchScreen.storyboard */,
@@ -272,6 +277,7 @@
 			files = (
 				A7396FE51CCC599C0020047B /* ViewController.m in Sources */,
 				A7396FE21CCC599C0020047B /* AppDelegate.m in Sources */,
+				93043BDA1CCE5533008AD138 /* JGModel.m in Sources */,
 				A7396FDF1CCC599C0020047B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +502,7 @@
 				A73970091CCC599C0020047B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A739700A1CCC599C0020047B /* Build configuration list for PBXNativeTarget "demo-for-kvc-jsonTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +511,7 @@
 				A739700C1CCC599C0020047B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A739700D1CCC599C0020047B /* Build configuration list for PBXNativeTarget "demo-for-kvc-jsonUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +520,7 @@
 				A739700F1CCC599C0020047B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
