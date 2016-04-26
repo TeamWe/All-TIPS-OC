@@ -7,9 +7,12 @@
 //
 
 #import "JGModel.h"
-
+#import <objc/runtime.h>
 
 @interface JGModel ()
+@property (nonatomic, copy)NSString *Amount;
+@property (nonatomic, copy)NSString *CurrentPage;
+
 @property (nonatomic, copy)NSString *etag;
 @end
 
@@ -19,8 +22,9 @@ static JGModel *once = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if(once != NULL)
+//        if(once != NULL)
             once = [[JGModel alloc]init];
+        [once getBookI];
     });
     return once;
 }
@@ -46,17 +50,35 @@ static JGModel *once = nil;
             //            在缓存中取出数据
         }
         //        简单解析
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil][@"Detail"];
         NSLog(@"dic=%@",dic);
-        
+        [self serializationDataWith:dic];
         
         //        更新etag数据
         if(httpresponse.statusCode == 200)
             self.etag = httpresponse.allHeaderFields[@"Etag"];
     }];
     
-    
     [task resume];
     
+}
+-(void) serializationDataWith:(NSDictionary *)dic{
+    Class c = self.class;
+    unsigned int count;
+    Ivar *ivars = class_copyIvarList(c, &count);
+    for (int i=0; i<count; i++) {
+        Ivar ivar = ivars[i];
+        NSString *name = [[NSString stringWithUTF8String:ivar_getName(ivar)]substringFromIndex:1] ;
+        NSLog(@"%@",name);
+        id value = dic[name];
+        if (!value) {//多余的属性可以不管kv
+            continue;
+        }
+        object_setIvar(self, ivar, dic[name]);
+//        [self setValue:dic[name] forKey:name];//也可以
+        NSLog(@"12");
+    }
+    free(ivars);
+    c = [c superclass];
 }
 @end
