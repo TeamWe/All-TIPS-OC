@@ -48,6 +48,8 @@ static JGModel *once = nil;
         //        简单解析
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
         NSLog(@"dic=%@",dic);
+        
+        
         //        更新etag数据
         if(httpresponse.statusCode == 200)
             self.etag = httpresponse.allHeaderFields[@"Etag"];
