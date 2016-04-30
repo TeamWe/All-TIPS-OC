@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93043BDA1CCE5533008AD138 /* JGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93043BD91CCE5533008AD138 /* JGModel.m */; };
+		9322CFD41CD4A75500395E7C /* NSObject+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322CFD31CD4A75500395E7C /* NSObject+Json.m */; };
 		A7396FDF1CCC599C0020047B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7396FDE1CCC599C0020047B /* main.m */; };
 		A7396FE21CCC599C0020047B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7396FE11CCC599C0020047B /* AppDelegate.m */; };
 		A7396FE51CCC599C0020047B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7396FE41CCC599C0020047B /* ViewController.m */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		93043BD81CCE5533008AD138 /* JGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGModel.h; sourceTree = "<group>"; };
 		93043BD91CCE5533008AD138 /* JGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGModel.m; sourceTree = "<group>"; };
+		9322CFD21CD4A75500395E7C /* NSObject+Json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Json.h"; path = "../NSObject+Json.h"; sourceTree = "<group>"; };
+		9322CFD31CD4A75500395E7C /* NSObject+Json.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Json.m"; path = "../NSObject+Json.m"; sourceTree = "<group>"; };
 		A7396FDA1CCC599C0020047B /* demo-for-kvc-json.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-for-kvc-json.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7396FDE1CCC599C0020047B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7396FE01CCC599C0020047B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				A7396FE41CCC599C0020047B /* ViewController.m */,
 				93043BD81CCE5533008AD138 /* JGModel.h */,
 				93043BD91CCE5533008AD138 /* JGModel.m */,
+				9322CFD21CD4A75500395E7C /* NSObject+Json.h */,
+				9322CFD31CD4A75500395E7C /* NSObject+Json.m */,
 				A7396FE61CCC599C0020047B /* Main.storyboard */,
 				A7396FE91CCC599C0020047B /* Assets.xcassets */,
 				A7396FEB1CCC599C0020047B /* LaunchScreen.storyboard */,
@@ -277,6 +282,7 @@
 			files = (
 				A7396FE51CCC599C0020047B /* ViewController.m in Sources */,
 				A7396FE21CCC599C0020047B /* AppDelegate.m in Sources */,
+				9322CFD41CD4A75500395E7C /* NSObject+Json.m in Sources */,
 				93043BDA1CCE5533008AD138 /* JGModel.m in Sources */,
 				A7396FDF1CCC599C0020047B /* main.m in Sources */,
 			);

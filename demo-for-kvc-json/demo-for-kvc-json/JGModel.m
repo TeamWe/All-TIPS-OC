@@ -8,11 +8,24 @@
 
 #import "JGModel.h"
 #import <objc/runtime.h>
+#import "NSObject+Json.h"
+
+@interface JGDataModel : NSObject
+@property(nonatomic, copy)NSString *Date;
+@property(nonatomic, copy)NSString *ID;
+@property(nonatomic, copy)NSString *Title;
+@end
+
+@implementation JGDataModel
+
+
+@end
+
 
 @interface JGModel ()
 @property (nonatomic, copy)NSString *Amount;
 @property (nonatomic, copy)NSString *CurrentPage;
-
+@property (nonatomic, copy)NSArray<JGDataModel *> *Data;
 @property (nonatomic, copy)NSString *etag;
 @end
 
@@ -62,23 +75,8 @@ static JGModel *once = nil;
     [task resume];
     
 }
--(void) serializationDataWith:(NSDictionary *)dic{
-    Class c = self.class;
-    unsigned int count;
-    Ivar *ivars = class_copyIvarList(c, &count);
-    for (int i=0; i<count; i++) {
-        Ivar ivar = ivars[i];
-        NSString *name = [[NSString stringWithUTF8String:ivar_getName(ivar)]substringFromIndex:1] ;
-        NSLog(@"%@",name);
-        id value = dic[name];
-        if (!value) {//多余的属性可以不管kv
-            continue;
-        }
-        object_setIvar(self, ivar, dic[name]);
-//        [self setValue:dic[name] forKey:name];//也可以
-        NSLog(@"12");
-    }
-    free(ivars);
-    c = [c superclass];
+
+- (NSString *)arrayObjectClass{
+    return @"JGDataModel";
 }
 @end
