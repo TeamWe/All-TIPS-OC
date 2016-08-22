@@ -42,6 +42,18 @@ static JGModel *once = nil;
     return once;
 }
 
+- (void)getBookI1{
+    Class c = self.class;
+    unsigned int count;
+    objc_property_t *propers = class_copyPropertyList(c, &count);
+    for (int i=0; i<count; i++) {
+        objc_property_t p = propers[i];
+        NSLog(@"%s\n%s\n",property_getName(p),property_getAttributes(p));
+    }
+    
+    
+}
+
 - (void)getBookI{
     
     NSString *str = @"http://api.xiyoumobile.com/xiyoulibv2/news/getList/news/1";
@@ -60,7 +72,7 @@ static JGModel *once = nil;
         if(httpresponse.statusCode == 304){//可以使用缓存
             NSCachedURLResponse *cacheResponse = [[NSURLCache sharedURLCache]cachedResponseForRequest:request];
             data = [NSData dataWithData:cacheResponse.data];
-            //            在缓存中取出数据
+        //            在缓存中取出数据
         }
         //        简单解析
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil][@"Detail"];

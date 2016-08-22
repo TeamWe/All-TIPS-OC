@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSURLCache *cache = [[NSURLCache alloc]initWithMemoryCapacity:6*1024*1024 diskCapacity:20*1024*1024 diskPath:@"Cache-JG"];
+    [NSURLCache setSharedURLCache:cache];
+    
+    
     return YES;
 }
 
